@@ -1,3 +1,6 @@
+ViewModel(앱에 필요한 데이터를 저장하고 관리하는 객체!) 사용!! 
+
+
 TextField 정석! 
 
 @Composable
