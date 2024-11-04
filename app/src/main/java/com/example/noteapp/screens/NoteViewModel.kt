@@ -1,10 +1,8 @@
 package com.example.noteapp.screens
 
 import android.util.Log
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.noteapp.data.NoteData
 import com.example.noteapp.model.Note
 import com.example.noteapp.repository.NoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

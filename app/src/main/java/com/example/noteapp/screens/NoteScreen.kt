@@ -38,7 +38,6 @@ import androidx.compose.ui.unit.dp
 import com.example.noteapp.R
 import com.example.noteapp.components.NoteButton
 import com.example.noteapp.components.NoteInputText
-import com.example.noteapp.data.NoteData
 import com.example.noteapp.model.Note
 import com.example.noteapp.util.formatDate
 import java.time.format.DateTimeFormatter
@@ -46,7 +45,7 @@ import java.time.format.DateTimeFormatter
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NoteScreen(
-    notes: List<Note> = NoteData().loadNotes(),
+    notes: List<Note>,
     onAddNote: (Note) -> Unit,
     onRemoveNote: (Note) -> Unit,
     modifier: Modifier = Modifier
@@ -174,14 +173,4 @@ fun NoteRow(
             )
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun NoteScreenPreview(){
-    NoteScreen(
-        notes = NoteData().loadNotes(),
-        onAddNote = {},
-        onRemoveNote = {}
-    )
 }
