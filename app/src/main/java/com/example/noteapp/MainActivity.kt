@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -32,17 +33,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val noteViewModel: NoteViewModel by viewModels()
-            NoteApp (noteViewModel = noteViewModel){ paddingValues, _ ->
-                val notes = noteViewModel.getAllNotes()
+            NoteApp { paddingValues, _ ->
+                val noteViewModel: NoteViewModel by viewModels()
 
                 NoteScreen(
-                    notes = notes,
+                    notes = noteViewModel.noteList.collectAsState().value,
                     onAddNote = {
                         noteViewModel.addNote(it)
                     },
                     onRemoveNote = {
-                        noteViewModel.removeNote(it)
+                        noteViewModel.deleteNote(it)
                     }
                 )
             }
