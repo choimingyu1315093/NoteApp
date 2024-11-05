@@ -43,3 +43,6 @@ fun NoteInputText(
         modifier = modifier
     )
 }
+
+
+![스크린샷 2024-11-05 오후 1 40 39](https://github.com/user-attachments/assets/c89b573f-fa2d-4f44-802a-f16c8345e4e9)
